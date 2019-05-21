@@ -1,2 +1,2 @@
-# reactjstraining
-Repo used for training in React JS for freshers of Web development.
+# javaSriptTraining
+Repo used for training in JavaScript for freshers of Web development.
