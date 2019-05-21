@@ -1,1 +1,3 @@
-# JavaScript Training From Sandeep
+# JavaScript Training
+
+JavaScript Training Notes from Sandeep
