@@ -1,0 +1,61 @@
+ var arr = ["Saab", "Volvo", "BMW"];  //full array
+  console.log(arr);
+var test=arr.tostring();
+
+var cars=new arr("car","bus","van");     //some error
+console.log(cars);
+
+var arr=["bag","book","ball"];     // by index
+console.log(arr[2]);
+
+ var arr=["bag","book","ball"];  //changing array element
+ arr[1]="bat"; 
+console.log(arr[2]);
+
+access element in array
+var employee = ["lalitha", "N", 21];
+console.log(employee[0]);
+
+access element in object
+var employee = {FirstName:"lalitha", LastName: "N",Age:21};
+console.log(employee.LastName)
+
+var fruits = ["Banana", "Orange","grapes"]; //find length of array
+fruits.length;
+
+var fruits = ["Banana", "Orange","Mango"]; // adding element to array
+fruits.push("Lemon");
+
+var fruits=["Banana","Orange","Mango"];      //poping element from array
+fruits.pop();
+
+var person = [];
+person[0] = "kavi";
+person[1] = "m";
+person[2] = 22; 
+console.log(person[0] + " " + person.length)   //number index in array
+
+
+function host(){            //variable hosting
+  a=30;
+  var b=50;
+}
+host();
+console.log(a);
+console.log(b);
+
+
+let sum=(a,b)=>a+b;   //arrow function
+alert(sum(1,2));
+
+//bind function 
+var car={
+  registrationnumber:"gA1234",
+  brand:"toyota",
+  displayDetails:function(ownername)
+  {
+    console.log(ownername+"this is my car :"+this.registrationnumber+" "+this.brand);
+  }
+}
+var mycarDetails=car.displayDetails.bind(car,"aryan");
+mycarDetails();
