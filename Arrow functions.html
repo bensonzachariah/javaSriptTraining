@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>
+        Click the button to call a arrow function after entering values to textfield
+    </h1>
+
+    <form>
+        <Label>Enter a number</Label>
+        <input type="number" id="firstnumber"></input>
+
+        <label>Enter a number</label>
+        <input type="number" id="secondnumber"></input>
+
+        <input type="submit" onclick="return Arrowfunction()"></input>
+    </form>
+
+
+
+    <script>
+
+   let Arrowfunction= ()=>
+     {
+         let a = parseInt(document.getElementById('firstnumber').value.trim());
+         let b= parseInt(document.getElementById('secondnumber').value.trim());
+
+         alert(a+b);
+     } ;     
+        
+    </script>
+    
+</body>
+</html>
