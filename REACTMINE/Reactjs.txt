@@ -1,0 +1,212 @@
+1) Functional Binding
+
+let user = {
+  first : 'Chandana'
+};
+
+function func(parameter)
+{
+  alert(parameter+''+this.first);
+}
+
+let demo = func.bind(user)
+demo('Acharya')
+
+2) (i) Constructor
+
+function User(name) {
+  this.name = name;
+  this.isAdmin = false;
+}
+
+let user = new User("Jack");
+
+alert(user.name); // Jack
+alert(user.isAdmin); // false
+
+   (ii) Constructor with return stmt
+
+function demo()
+{
+  this.name ='chandu';
+  return{
+    name:'hf'                                    //if return is not mentioned, it returns chandu here.
+  };
+}
+alert(new demo().name)
+
+   (iii) Constructor with method
+
+function demo(name)
+{
+  this.name = name;
+
+  this.say = function()
+  {
+    alert(this.name);
+  };
+}
+
+let test = new demo('chandu');
+test.say();
+
+
+3) OOPs 
+
+(i) Inheritance
+
+function Animal()
+{
+this.category = 'Herbivores',
+this.leg = 4
+}
+function Cow()
+{
+this.name = 'RabsCow',
+this.color = 'white'
+}
+Cow.prototype = new Animal();
+var test = new Cow()
+Console.log(test.category);
+Console.log(test.leg);
+
+(ii) Polymorphism 
+
+function Person(age,weight){   //Person cls
+ this.age = age;
+ this.weight = weight;
+}
+
+Person.prototype.getInfo = function(){
+ return "I am " + this.age + " years old " +
+    "and weighs " + this.weight +" kilo.";
+};
+
+function Employee(age,weight,salary){		//Emp cls
+ this.age = age;
+ this.weight = weight;
+ this.salary = salary;
+}
+Employee.prototype = new Person();
+
+Employee.prototype.getInfo = function(){
+ return "I am " + this.age + " years old " +
+    "and weighs " + this.weight +" kilo " +
+    "and earns " + this.salary + " dollar.";  
+};
+var person = new Person(50,90);
+var employee = new Employee(43,80,50000);
+
+console.log(person.getInfo());
+console.log(employee.getInfo());
+
+4) Addition of values in the Arrays
+
+	function demo(...values)
+	{
+	let sum = 0;
+	for(let i = 0, len = values.length; i<len;i++)
+	{
+	sum+=values[i];
+	}
+	document.write(sum);
+	}
+	demo(1,2,3,4);
+
+5)Arrow Functions
+	
+	let variable = (parameters)=>(operation}{}
+	let var = (x,y)=>x*y
+	{
+	document.write(`${variable(5,5)}`);		//10
+	}
+
+	Another way
+	
+	let demo = (a,b) =>
+	{
+	let product  = a * b;
+	document.write(`${a} * ${b} = ${product}`);
+	}
+	demo(5,5);
+	
+	*Reduce Method
+	let vals = [1,2,3,4];
+	let demo = val.reduce((a,b)=>a+b);
+	document.write(`${demo}`);			//10 (Adds all the values in the array)(displays the last value)
+	
+	let val1 = [1,2,3,4];
+	let demo = val1.filter(v=> v%2==0)		//LOGIC TO FIND EVEN NO'S (2,4)
+	document.write(`${demo}`);
+	
+	let val1 = [1,2,3,4];
+	let demo = val1.filter(v=> v*2)			//2,4,6,8. If u use any functions like reduce(displays last no - 4*2=8), filter(displays all no's - 1,2,3,4)
+	document.write(`${demo}`);
+
+6) Objects
+	
+	function create(toy, name)
+	{
+  	return{
+    	toy, 
+    	name,
+    	getInfo()
+    	{
+     	return `${this.toy} ${this.name}`;
+    	}, 
+    	address:{
+      	state:"kar",
+      	city:"mys",
+    	},
+    	street:{
+      	cross:2,
+      	layoit:"Ashryaa",
+    	}
+  	};
+	}
+	var l1= create("Minion", "super");
+	document.write(`${l1.getInfo()}`);		//Minion Super
+	document.write(`${l1.street.cross}`)		//2
+	document.write(`${Object.getOwnPropertyNames(l1).join("")}`)  //toynamegetInfoaddressstreet - returns property names.
+	let{toy, name} = l1;		//storing toy n name in l1
+	document.write(`${toy}`)	//Minion
+	let{address} = l1;
+	document.write(`${address.city}`)	//mys
+
+7) Var is defined anywhere in the scope, but let is defined within the scope
+	if(true)			
+	{
+	var x =10;			
+	document.write(x);		//prints 10
+	}
+	document.write(x);		//prints 10
+
+	if(true)
+	{
+	let x =10;
+	document.write(x);		//prints 10
+	}
+	document.write(x);		Shows error coz its out of scope.
+
+8) As let is defined within the scope
+
+	var x = 10;
+	if(true)			//prints 10
+	{
+	let x = 20;
+	}
+	document.write(x);
+
+9) const cannot be re-initialized
+
+	const pi = 3.14;
+	document.write(pi);		//prints 3.14
+	const pi = 2.14`		//error, coz it cannot be re-initialized
+
+	const pi = 3.14;
+	document.write(pi);
+	if(true)
+	{
+	const pi = 2.14;		//Though you declared pi as const, here when ur using, again shld declare the sm variable with const.
+	document.write(pi);		//prints 3.14 and 2.14.
+	}

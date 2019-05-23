@@ -1,0 +1,204 @@
+ES6
+
+1. Var is defined anywhere in the scope, but let is defined within the scope
+	if(true)			
+	{
+	var x =10;			
+	document.write(x);		//prints 10
+	}
+	document.write(x);		//prints 10
+
+	if(true)
+	{
+	let x =10;
+	document.write(x);		//prints 10
+	}
+	document.write(x);		Shows error coz its out of scope.
+
+2. As let is defined within the scope
+
+	var x = 10;
+	if(true)			//prints 10
+	{
+	let x = 20;
+	}
+	document.write(x);
+
+3. const cannot be re-initialized
+
+	const pi = 3.14;
+	document.write(pi);		//prints 3.14
+	const pi = 2.14`		//error, coz it cannot be re-initialized
+
+	const pi = 3.14;
+	document.write(pi);
+	if(true)
+	{
+	const pi = 2.14;		//Though you declared pi as const, here when ur using, again shld declare the sm variable with const.
+	document.write(pi);		//prints 3.14 and 2.14.
+	}
+
+4. Type of Operator:
+	It defines the datatype of the value specified.
+	
+	document.write(type of 10); 		//number
+	document.write(type of 'c'); 		//string
+	document.write(type of "chandu");	//string 
+	document.write(type of {a:1}); 		//object
+	document.write(type of 10.23); 		//number
+	document.write(type of [1,2,3]); 	//object
+	document.write(type of Symbol()); 	//Symbol(Built in)
+
+5. Template Literals
+
+	var first = "Chandana";
+	var last = "Acharya";
+	document.write(`${first} ${last});	//Chandana Acharya
+
+	var n1 = 10;
+	var n2 = 20;
+	document.write(`10*20 = ${n1*n2}`)	//10*20 = 200
+	document.write(`n1*n2`)			//200
+
+	var p1 = "flower";
+	var p2 = 500;
+	document.write(concat = `{p1+p2}`)	//concat = flower500 (concatenation)
+
+
+	function doMath(strings, ...values)	//if u miss 3 dots(Rest Parameters), then it doesnot work, strings can be replaced with any names
+	{
+	if(strings[0] == 'Add')
+	{
+	doument.write(`${values[0] + values[1]}`);
+	}
+	else if(strings[0] == 'Sub')
+	{
+	document.write(`${values[0]-values[1]}`);
+	}
+	}
+	doMath `Add${10} ${20}`   		//30
+	doMath `Sub${10} ${20}`			//10
+
+
+	var first = "cat";			//o/p(it takes the input in the form of string)
+	for(let c of fname)			c
+	{					a
+	document.write(`${c}`);			t
+	}
+
+6. Repeat Property
+
+	document.write("name ".repeat(number));
+	document.write("cgc ".repeat(3));	//cgc cgc cgc
+
+7. Startswith and Endswith (returns boolean value)
+
+	var name = "Minion";
+	document.write(name.startswith("hgv"));	//false
+	document.write(name.endswith("yre"));	//false
+	document.write(name.startswith("Min"));	//true
+	document.write(name.endswith("ion"));	//true
+	document.write(name.includes("nio"));	//true
+
+8. MultiLine String
+
+	var multiline = "this is\		//In ES-5(this is
+			minion\				  minion
+			very fine";			  very fine)-o/p.
+
+	var multiline = `this is		//In ES-6 (this is
+			minion				   minion
+			very fine`			   very fine)-o/p
+	document.write(`${multiline}`);		
+
+9. Some more examples of literals
+
+	function val(num1=3, num2=4)
+	{
+	document.write(`${num1 + num2}`); (or) document.write(`${arguments[0] + arguments[1]}`);		//line 3
+	}
+	val(2);					//here 2 gets assigned to num1 and its add to num2(4) = 6.
+	val(4,6);				//here 4 gets assigned to num1 and 6 gets assigned to num2 = 10.
+	val(10); 				//When you use with arguments as in line 3, 10 gets assigned to num1 but nothing gets assigned to num2
+						  so the o/p will be 10+NaN
+
+10. Addition of values in the Arrays
+
+	function demo(...values)
+	{
+	let sum = 0;
+	for(let i = 0, len = values.length; i<len;i++)
+	{
+	sum+=values[i];
+	}
+	document.write(sum);
+	}
+	demo(1,2,3,4);
+
+11.	Arrow Functions
+	
+	let variable = (parameters)=>(operation}{}
+	let var = (x,y)=>x*y
+	{
+	document.write(`${variable(5,5)}`);		//10
+	}
+
+	Another way
+	
+	let demo = (a,b) =>
+	{
+	let product  = a * b;
+	document.write(`${a} * ${b} = ${product}`);
+	}
+	demo(5,5);
+	
+	*Reduce Method
+	let vals = [1,2,3,4];
+	let demo = val.reduce((a,b)=>a+b);
+	document.write(`${demo}`);			//10 (Adds all the values in the array)(displays the last value)
+	
+	let val1 = [1,2,3,4];
+	let demo = val1.filter(v=> v%2==0)		//LOGIC TO FIND EVEN NO'S (2,4)
+	document.write(`${demo}`);
+	
+	let val1 = [1,2,3,4];
+	let demo = val1.filter(v=> v*2)			//2,4,6,8. If u use any functions like reduce(displays last no - 4*2=8), filter(displays all no's - 1,2,3,4)
+	document.write(`${demo}`);
+
+12. Objects
+	
+	function create(toy, name)
+	{
+  	return{
+    	toy, 
+    	name,
+    	getInfo()
+    	{
+     	return `${this.toy} ${this.name}`;
+    	}, 
+    	address:{
+      	state:"kar",
+      	city:"mys",
+    	},
+    	street:{
+      	cross:2,
+      	layoit:"Ashryaa",
+    	}
+  	};
+	}
+	var l1= create("Minion", "super");
+	document.write(`${l1.getInfo()}`);		//Minion Super
+	document.write(`${l1.street.cross}`)		//2
+	document.write(`${Object.getOwnPropertyNames(l1).join("")}`)  //toynamegetInfoaddressstreet - returns property names.
+	let{toy, name} = l1;		//storing toy n name in l1
+	document.write(`${toy}`)	//Minion
+	let{address} = l1;
+	document.write(`${address.city}`)	//mys
+
+13. Classes
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+Arrow Functions
+	
+	let variable = (parameters)=>(operation}{}
+	let var = (x,y)=>x*y
+	{
+	document.write(`${variable(5,5)}`);		//10
+	}
+
+	Another way
+	
+	let demo = (a,b) =>
+	{
+	let product  = a * b;
+	document.write(`${a} * ${b} = ${product}`);
+	}
+	demo(5,5);
+	
+	*Reduce Method
+	let vals = [1,2,3,4];
+	let demo = val.reduce((a,b)=>a+b);
+	document.write(`${demo}`);			//10 (Adds all the values in the array)(displays the last value)
+	
+	let val1 = [1,2,3,4];
+	let demo = val1.filter(v=> v%2==0)		//LOGIC TO FIND EVEN NO'S (2,4)
+	document.write(`${demo}`);
+	
+	let val1 = [1,2,3,4];
+	let demo = val1.filter(v=> v*2)			//2,4,6,8. If u use any functions like reduce(displays last no - 4*2=8), filter(displays all no's - 1,2,3,4)
+	document.write(`${demo}`);

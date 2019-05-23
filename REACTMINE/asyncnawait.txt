@@ -1,0 +1,25 @@
+1. async() 		
+
+	Starts with keyword async
+async function f()
+{
+return 1;
+}
+f().then(alert);
+//1
+
+2. await()
+
+async function f() {
+
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("done!"), 1000)
+  });
+
+  let result = await promise; // wait till the promise resolves (*)
+
+  alert(result); // "done!"
+}
+
+f();
+//displays Promise {} then alerts done.

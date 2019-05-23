@@ -1,0 +1,55 @@
+map(), reduce() and filter()
+
+1. map()						//to get the particular thing(here id)
+
+var officers = [
+  { id: 20, name: 'Chandana Acharya' },
+  { id: 21, name: 'Priyanka Aryan' },
+  { id: 22, name: 'Sandeep Mohan' },
+  { id: 23, name: 'Benson Zachariah' }
+]
+
+var officersIds = officers.map(function (officer) {
+  return officer.id
+}); 							//map accepts 2 arguments(callback, optional context)
+console.log(officersIds);				//[20,21,22,23]
+
+2. reduce()
+
+var Employee = [
+  {
+    id: 6895,
+    name: "Murali",
+    years: 22,
+  },
+  {
+    id: 6896,
+    name: "Kashyap",
+    years: 23,
+  }
+];
+var totalYears = Employee.reduce(function (accumulator, Employee) {
+  return accumulator + Employee.years;
+}, 0);
+console.log(totalYears)					//(22+23) = 45
+
+3. filter()
+
+var Employee = [
+  {
+    id: 6895,
+    name: "Murali",
+    years: 22,
+  },
+  {
+    id: 6896,
+    name: "Kashyap",
+    years: 23,
+  }
+];
+
+var demo= Employee.filter(function (emp) {
+  return emp.name === "Murali";
+});
+console.log(demo);					//murali's id,name and years will be displayed.
+
