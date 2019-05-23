@@ -15,7 +15,7 @@ sayHi('Sandy');
 
 const fruits = new Array('Apples', 'Grapes', 'Mangos');
 //forEach using normal function
-fruits.forEach(function(fruit) {
+fruits.forEach(function (fruit) {
   //console.log(fruit);
 });
 //forEach using Arrow Function
@@ -122,3 +122,19 @@ console.log(colleague2.info());
 // file 2 (file2.js)
 // import { name, nums } from './file1'; //assuming file 1 is in the same folder
 // import Friend from './file1';
+
+
+//BIND 
+
+const profile1 = {
+  name: "John Doe",
+  age: 23,
+  location: "India"
+}
+
+const test = function () {
+  console.log(`My name is ${this.name} and I'm ${this.age}`);
+}
+
+test.bind(profile1)();
+
