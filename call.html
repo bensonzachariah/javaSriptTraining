@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Functions</h2>
+<p id="demo"></p>
+<script>
+var person = {
+  fullName: function(city,state) {
+    return this.firstName + " " + this.lastName +","+city+ "," +state;
+  }
+}
+var person1 = {
+  firstName:"priya",
+  lastName: "aryan"
+}
+var person2 = {
+  firstName:"kavi",
+  lastName: "m"
+}
+var x = person.fullName.call(person1,"mysore","karnataka"); 
+document.getElementById("demo").innerHTML = x; 
+</script>
+</body>
+</html>
