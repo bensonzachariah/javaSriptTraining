@@ -1,0 +1,44 @@
+//inherttance
+	function car(){
+	this.category="car";
+	this.wheels="4";
+	}
+	function BMW()
+	{
+	this.name="BMW";
+	this.color="black";
+	}
+	BMW.prototype=new car()
+	var obj=new BMW()
+	console.log(obj.category);
+	console.log(obj.name);
+	console.log(obj.color);
+	console.log(obj.wheels);
+
+
+//encapsulation
+    var person = function () {
+    var fullName = "chandu";
+	var reg = new RegExp(/\d+/);
+	return { 
+	setFullName : function (newValue) {
+    if( reg.test(newValue) ) {   
+	console.log("Invalid Name");
+    }
+    else {     
+	fullName = newValue;
+    }
+	},
+	getFullName : function () {
+	return fullName; 
+	}
+	};  
+	}(); //  calling the function 
+	console.log(person.getFullName());   // chandu
+	person.setFullName( "sanju" );
+	console.log(person.getFullName());  // sanju
+	person.setFullName( 42 ); // Invalid Name
+	person.fullName = 42;    // private field fullName variable not get affected
+	console.log(person.getFullName());
+
+
