@@ -1,0 +1,17 @@
+Higher order component - Basic Example
+
+	import React from 'react';
+
+	const higherOrderComponent = (WrappedComponent) => {
+  	class HOC extends React.Component {
+    	render() {
+      	return <WrappedComponent />;
+    	}
+  	}
+    
+  	return HOC;
+	};
+
+[Here higherOrderComponent is a function which accepts WrappedComponent
+ as an argument. I created a new component call HOC which returns Wrapped
+ Component in render()]
