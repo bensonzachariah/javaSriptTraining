@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>Apply Method</head>
+<p id="demo"></p>
+<script>
+var person = {
+  fullName: function(city,state) {
+    return this.firstName + " " + this.lastName +","+city+ "," +state;
+  }
+}
+var person1 = {
+  firstName:"priya",
+  lastName: "aryan"
+}
+var person2 = {
+  firstName:"kavi",
+  lastName: "m"
+}
+var x = person.fullName.apply(person1,["mysore","karnataka"]); 
+document.getElementById("demo").innerHTML = x; 
+</script>
+</body>
+</html>
