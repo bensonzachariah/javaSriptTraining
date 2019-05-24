@@ -1,0 +1,50 @@
+1. Closure Function
+
+	function outer()
+	{
+  	var b =10;
+  	function inner()
+  	{
+    	var a = 20;
+    	console.log(a+b);
+  	}
+  	return inner;
+	}
+	var X = outer();
+	var Y = outer();
+	console.log(X)
+	console.log(typeof(X))				//displays X is a function.
+
+	//[Function: inner]
+
+[ Here we have 2 functions:outer() & inner(), b is limited to outer() and returns inner().
+a is limited to inner() and has an access to outer(). Now let us invoke outer() and store
+the result in X and again invoke outer() for 2nd time and store result in Y.
+  var b is set to 10, return inner searches for the inner word and it knows inner is a function
+and executes the body.
+  once outer() finishes the execution, variables inside it doesnot exist.
+  In the line console.log(a+b), a is available, since b is executed already it doesnot exists.
+so, now closures will handle it.
+  inner() access the variables of outer() because of closures. It stores the values of variables of
+outer() and preserves it. So now b =10 and a = 20.
+
+
+2. Immediate Invoke Functions
+
+1.	(function()			
+	{
+ 	console.log("cgc");				//cgc
+	}())
+
+
+2. 	var name = 'Chandana';
+	var age = 22;
+	(function(thisname, thisage)
+	{
+  	console.log('She is' + ' ' + thisname + '' + ' ' + 'she is' + ' ' + thisage + ' ' + 'years old')
+	}
+	(name,age))
+
+	//She is Chandana she is 22 years old
+
+
