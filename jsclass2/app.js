@@ -50,8 +50,23 @@ var xy = doSomeMath();
 
 console.log(xy());
 
+//Default function parameters
+
+function add(x = 1, y = 2) {
+    console.log(x + y);
+}
+
+add();
+
+function todo(name = "walk the dog") {
+    console.log(`Your todo is ${name}`)
+}
+
+todo();//default
+todo("Creact an awesome application");
+
 //Immediately Invoked Function(IIF)
-//An immediately invoked function expression that runs as soon as the browser encounters it
+//An IIF expression that runs as soon as the browser encounters it
 
 const theBiggest = (function (a, b) {
     var result;
@@ -63,7 +78,7 @@ console.log(theBiggest);
 
 //MAP
 //Use something other than a string as a key
-//Utilize key value paris that are alwaay the same value
+//Utilize key value paris that are always the same value
 //Use map when we need to iterate in order
 
 var course = new Map();
@@ -106,6 +121,8 @@ console.log("data.length", data.length);
 console.log("set.size", set.size);
 //by the time data array turned in to a set, all of the duplicates are removed
 
+
+
 //for...of
 //we can use to loop over iterable objects like arrays, strings, maps, and sets. 
 
@@ -143,17 +160,18 @@ for (let topic of topics.values()) {
     console.log("Values", topic);
 }
 
-//Default function parameters
-
-function add(x = 1, y = 2) {
-    console.log(x + y);
+//For...in
+//used to loop through an object's properties.
+const person = {
+    Name: "Sandeep Mohan",
+    Age: 23,
+    Place: "Mysore"
 }
 
-add();
-
-function todo(name = "walk the dog") {
-    console.log(`Your todo is ${name}`)
+for (let prop in person) {
+    // console.log(prop);
+    console.log(prop + ": " + person[prop]);
 }
 
-todo();
-todo("Creact an awesome application");
+
+
