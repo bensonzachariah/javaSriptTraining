@@ -93,3 +93,29 @@ const countToFive = async () => {
 };
 
 countToFive();
+
+// Call and Apply
+
+//bind objects of functions and include them as the this parameter.
+// const speak = what => {
+//     console.log(what);
+//     console.log(this.cat, "cat");
+// }
+
+// const saySomething = { cat: "meow", dog: "wuff" };
+
+// speak.call(saySomething);
+
+function speak(what) {
+    console.log(what);
+    console.log(this.cat);
+}
+
+const saySomething = { cat: "Meow Meow", dog: "Wuff Wuff" };
+
+speak.call(saySomething, "Hi"); //Hi is a Regular parameter 
+
+
+const sounds = ["Hello"]
+
+speak.apply(saySomething, sounds); // Takes parameter as array
