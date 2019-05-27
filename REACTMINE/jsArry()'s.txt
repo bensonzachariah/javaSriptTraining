@@ -1,0 +1,74 @@
+JS Array Methods
+
+1. ToString()
+	var skills = ['Java', 'MySQL', 'HTML', 'CSS', 'Javascript'];
+	skills.toString();
+
+2. Join()
+	var test1 = skills.join(' @ ');
+	console.log(test1)
+
+3. Splice()
+	skills.splice(2,1,'ASP.NET');
+	//[ ['Java', 'MySQL', 'HTML', 'ASP.NET', 'Javascript'];]
+
+4. Slice()
+	skills.slice(1);
+	//['MySQL', 'HTML', 'CSS', 'Javascript']
+
+5. length()
+	skills.length;
+	//5
+
+6. Indexing
+	skills[0] = 'C++'
+	console.log(skills)
+	//[ 'C++', 'MySQL', 'ASP.NET', 'CSS', 'Javascript' ]
+
+
+7. Delete
+	delete skills[0];
+	console.log(skills)
+	//[ <1 empty item>, 'MySQL', 'ASP.NET', 'CSS', 'Javascript' ]
+
+
+8. push()
+	var test2 = skills.push('Python')
+	console.log(skills)
+	//[ <1 empty item>,
+  	// 'MySQL',
+  	// 'ASP.NET',
+  	// 'CSS',
+  	// 'Javascript',
+  	// 'Python' ]
+
+
+9. pop()
+  	skills.pop();
+  	console.log(skills)
+  	//[ <1 empty item>, 'MySQL', 'ASP.NET', 'CSS', 'Javascript' ]
+
+10. shift()
+  	skills.shift()
+  	console.log(skills)
+  	//[ 'MySQL', 'ASP.NET', 'CSS', 'Javascript' ]
+
+
+11.unshift()
+  skills.unshift('React');
+  console.log(skills)
+  //[ 'React', 'MySQL', 'ASP.NET', 'CSS', 'Javascript' ]
+
+
+12. concat()
+  var techpark = ['Manyata', 'Global', 'SSTP']
+  var IT = skills.concat(techpark);
+  console.log(IT);
+  //[ 'React',
+  // 'MySQL',
+  // 'ASP.NET',
+  // 'CSS',
+  // 'Javascript',
+  // 'Manyata',
+  // 'Global',
+  // 'SSTP' ]
