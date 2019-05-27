@@ -1,0 +1,37 @@
+1. call()
+
+var person1 = {
+  firstName:'cgc',
+  lastName:'sgs'
+}
+
+var person = {
+  fullName:function(City, Country){
+    return this.firstName + "," + this.lastName + "," + City + "," + Country;
+  }
+}
+
+person.fullName.call(person1, "Mysuru", "India");
+
+//'cgc,sgs,Mysuru,India'
+
+
+2. apply() - it accepts arguments as arrays.
+
+var person1 = {
+  firstName:'cgc',
+  lastName:'sgs'
+}
+
+var person = {
+  fullName:function(City, Country){
+    return this.firstName + "," + this.lastName + "," + City + "," + Country;
+  }
+}
+
+person.fullName.call(person1, ["Mysuru", "India"]);
+
+//cgc,sgs,Mysuru,India
+
+
+
