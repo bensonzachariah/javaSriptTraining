@@ -72,3 +72,24 @@ const getJoke = () => {
 }
 
 getJoke();
+
+
+// Async Await
+
+const delay3 = seconds => {
+    return new Promise(
+        resolve => setTimeout(resolve, seconds * 1000)
+    )
+};
+
+const countToFive = async () => {
+    console.log('zero seconds');
+    await delay3(1);
+    console.log('one second');
+    await delay3(1);
+    console.log('two seconds');
+    await delay3(3);
+    console.log('five seconds');
+};
+
+countToFive();
