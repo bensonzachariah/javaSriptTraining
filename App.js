@@ -1,22 +1,29 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import PersonList from './Component/PersonList.js';
-import PersonInput from './Component/PersonInput.js';
+import React, {Component} from 'react';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+
+import Landing from './components/Landing'
+import Navbar from './components/Navbar'
+import Login from './components/Login'
+import Register from './components/Register'
+import Profile from './components/Profile'
+
+
 
 class App extends Component {
   render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-         <h1 className = "App-title">Welcome to React</h1>
-      </header>
-      <PersonInput />
-      <PersonList />
-    </div>
+    <Router>
+      <div className = "App"> 
+      <Navbar />
+      <Route exact path = "/" component = {Landing} />
+      <div className = "container">
+      <Route exact path = "/register" component = {Register} />
+      <Route exact path = "/login" component = {Login} />
+      <Route exact path = "/profile" component = {Profile} />
+      </div>
+      </div>
+      </Router>
   );
 }
 }
-
 export default App;
