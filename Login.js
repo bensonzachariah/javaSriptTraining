@@ -1,74 +1,73 @@
-import React, {Component} from 'react'
-import {login} from './UserFunctions'
+import React from 'react';
+import './App.css';
 
-class Login extends React.Component {
-    constructor(){
-        super()
-        this.state = {
-            email: '',
-            password:'',
+export default class Login extends React.Component
+{
+    state = {
+        UserName: '',
+        Password:'',
+    };
 
-        }
-    
-    this.onChange = this.onChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-    }
+change = e => {
+    this.setState ({
+        [e.target.name]:e.target.value
+    });
+};
 
-    onChange(e) {
-        this.setState({[e.target.name]: e.target.value})
-    }
-    onSubmit(e){
-        e.preventDefault()
+onSubmit = e => {
+    e.preventDefault();
+    this.props.onSubmit(this.state);
+    console.log(this.state);
+    this.setState(
+        {
+        UserName: '',
+        Password:'',
+        });
+  
+};
+ render()
+    {
+        return(
+            <form>
+                <div class = "login">
 
-        const user = {
-            email:this.state.email,
-            password:this.state.password
-        }
+                    
+                    <h1 class="loginhead">Login</h1>
+                  
+                    <br />
+                 
+                  {/*<div class="content">*/}
+                    <div class = "div1 " >
+                    <label>UserName</label></div> 
+                    <br /> <br />
+                    <input class = "textfields" type="text"
+                    name ="UserName" value = {this.state.UserName}
+                    onChange = {e => this.change(e)}/>
+                    <br />
+                    <br/>
 
-        login(user).then(res => {
-            if(res){
-                this.props.history.push('/profile')
-            }
-        })
-    }
-    render(){
-        return (
-            <div className = "container">
-            <div className = "row">
-            <div className = "col-md-6 mt-5 mx-auto">
-            <form noValidate onSubmit = {this.onSubmit}>
-     
-          <h1 className ="h3 mb-3 font-weight-normal">Please sign in</h1> 
-                <div className = "form-group">
-                <label htmlFor="email">Email</label>
-                <input type="email" required
-                className = "form-control"
-                name = "email"
-                placeholder="Enter Email"
-                value = {this.state.email}
-                onChange = {this.onChange} />
+             <div class = "div2" >
+                   <label>Password</label></div>
+                   <br /><br />
+                <input class = "textfields"
+                name ="Password"
+                type="password"
+                value = {this.state.Password}
+                onChange = {e => this.change(e)}/>
+                <br />
+                <br/>
+                     
+                <button className="btn" onClick = {e => this.onSubmit(e)}>Login</button> <br /><br />
+              
+
+                <h3 class = "footer">Not yet a member? <a href="#" onClick={this.handleClick}>Register here!</a>
+                 </h3> <br />
+                
                 </div>
+               
+                </form>
 
-                <div className = "form-group">
-                <label htmlFor="password">Password</label>
-                <input type="password" 
-                className = "form-control"
-                name = "password"
-                placeholder="Enter Password"
-                value = {this.state.password}
-                onChange = {this.onChange} required/>
-                </div>
-
-                <button type = "submit" className = "btn btn-lg btn-primary btn-block">
-                Sign in
-                </button>
-                 </form>
-            </div>
-            </div>
-            </div>
-        )
-
+               
+        );
     }
 }
-
-export default Login
