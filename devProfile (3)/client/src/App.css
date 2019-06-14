@@ -1,0 +1,19 @@
+.head{
+  /* border:solid; */
+  text-align: center;
+  margin-top:200px;
+  color:white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-left:250px;
+  margin-right:250px;
+  font-size:50px;
+  background-color:cadetblue;
+  
+}
+
+body{
+  background-image:url("https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg");
+}
+
+
