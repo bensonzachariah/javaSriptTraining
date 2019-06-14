@@ -1,0 +1,40 @@
+body{
+  font-family: 'Poiret One', cursive;
+}
+
+
+.text{
+  color:black;
+  width:1070px;
+}
+
+
+label.header {
+  font-size: 15px;
+  width: 219px;
+  font-weight: 500;
+  color:black;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+input#txtFname,input#txtLname,input#txtphn,input#txtEmail,input#txtPhn,input#txtPassword,input#txtconfirmPassword,{
+  width: 200px;
+  height: 20px;
+  letter-spacing: 1px;
+  font-size: 17px;
+  font-family: 'Poiret One', cursive;
+}
+
+.register,.profile,.Login {
+  background-color: #4d93c7;
+  width: 20%;
+  text-align: center;
+  margin-right: 10px;
+  margin-left: 400px;
+  margin-top:30px;
+  float: left;
+  height: 30px;
+  color:black;
+}
+
