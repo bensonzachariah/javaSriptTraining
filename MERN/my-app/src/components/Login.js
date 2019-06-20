@@ -60,7 +60,7 @@ export default class Login extends Component {
 					<div>
 						<div className="fields">
 							<p>Email</p>
-							<input type="text" name="Username" onChange={this.handleOnChangeUserName} autoComplete="Username" required/>
+							<input type="email" name="Username" onChange={this.handleOnChangeUserName} autoComplete="Username" required/>
 						</div>
 						<div className="fields">
 							<p>{ COMMON_FIELDS.PASSWORD }</p>

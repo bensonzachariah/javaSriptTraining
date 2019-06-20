@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import Login from './Login';
 import Registration from './Registration';
-import './App.css'
 
 class App extends Component {
 	render() {

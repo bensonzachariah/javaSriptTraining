@@ -103,7 +103,7 @@ export default class Registration extends Component {
 						</div>
 						<div className="fields">
 							<p>Email</p>
-							<input type="text" className={classNames({ 'error': user_name_taken })} value={this.state.user_name} name="Username" onBlur={this.handleOnBlur} onChange={this.handleOnChangeUserName} autoComplete="Username" required/>
+							<input type="email" className={classNames({ 'error': user_name_taken })} value={this.state.user_name} name="Username" onBlur={this.handleOnBlur} onChange={this.handleOnChangeUserName} autoComplete="Username" required/>
 						</div>
 						<div className="fields">
 							<p>{ COMMON_FIELDS.PASSWORD }</p>
