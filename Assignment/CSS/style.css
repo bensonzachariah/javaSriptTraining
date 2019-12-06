@@ -1,16 +1,43 @@
+body{
+    text-align: center;
+    background: url('https://content.thriveglobal.com/wp-content/uploads/2019/01/mit-csail-human-computer-interaction-course-49ac46962df87356329302dd61fa5d5a.jpg') no-repeat;
+}
+
 #ColorSelection
 {
     width: 100%
 }
+
 
 #TblColor
 {
     width:20%;
     height: 30%;
     margin-top: 15px;
+    margin-left: 535px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 
-#Tblrow
+#LstColor{
+  
+    width: 20%;
+    height: 30%;
+    margin-top: 15px;
+    border-color:black;
+    font-family: cursive;
+    font-size: medium;
+    align-content: center;
+}
+#BtnSave
+{
+background-color:green;
+padding: 6px 14px;
+border-radius:7px;
+margin-top: 30px
+
+}
+
+#TblrowLstColor
 {
     width:10%;
     height:20%;
@@ -19,5 +46,32 @@
 #Tbldata
 {
 height: 30%;
+}
+
+#myButton 
+{
+	background-color:#7d5d3b;
+	border-radius:12spx;
+	border:1px solid #54381e;
+	display:inline-block;
+	
+}
+
+#myButton:hover
+{
+	background-color:#634b30;
+}
+
+#myButton:active
+{
+	position:relative;
+	top:1px;
+}
+
+
+form{
+    margin-top:240px; 
+    width:80%;
+
 }
 

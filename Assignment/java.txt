@@ -1,13 +1,17 @@
-var arrColor=[];
+ var arrColor=[];
  var arrDescription = [];
  var rowCount = 0;
+
+
+
 $('#LstColor').change(()=>{
     var colorSelected = $('#LstColor').val();
     rowCount = rowCount+1;
-    
- if(colorSelected != 'Select the color of the SKU' )
+   
+     if(colorSelected != 'Select the color of the SKU' )
     {
-     $('#TblColor').append('<tr><td><input type="button" id="myButton" value=" X  "></td><td>'+ colorSelected +'</td><td><input id="Description'+rowCount+'"type="text"></td></tr>');     
+            
+        $('#TblColor').append('<tr><td><input type="button" id="myButton" value=" X  "></td><td>'+ colorSelected +'</td><td><input id="Description'+rowCount+'"type="text"></td></tr>');     
         arrColor.push(colorSelected);
         $('#LstColor').val('Select the color of the SKU');
 
@@ -18,16 +22,22 @@ $('#LstColor').change(()=>{
         });
 
     }
-  });
+ 
+ });
 
  $('#BtnSave').click(()=>{
-     for(var i=rowCount;i<=rowCount;i++)
+     for(var i=1;i<=rowCount;i++)
      {
          arrDescription.push(
          $('#Description'+i).val());
-         console.log(arrColor[i-1]+"=>"+arrDescription[i-1]);
-          }
-})
+     }
+
+     for(var i=0;i<rowCount;i++)
+     {
+         console.log(arrColor[i]+"============>"+arrDescription[i]);
+     }
+     
+ })
 
 
 
